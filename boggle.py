@@ -16,7 +16,7 @@ class Boggle():
         dict_file = open(dict_path)
         words = [w.strip() for w in dict_file]
         dict_file.close()
-        return words
+        return words  # big ole list of all playable words
 
     def make_board(self):
         """Make and return a random boggle board."""
@@ -30,10 +30,11 @@ class Boggle():
         return board
 
     def check_valid_word(self, board, word):
-        """Check if a word is a valid word in the dictionary and/or the boggle board"""
+        """Check if a word is a valid word in the dictionary and/or 
+        the boggle board"""
 
-        word_exists = word in self.words
-        valid_word = self.find(board, word.upper())
+        word_exists = word in self.words  #exists in the dictionary
+        valid_word = self.find(board, word.upper())  #word on the board
 
         if word_exists and valid_word:
             result = "ok"
