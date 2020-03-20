@@ -23,14 +23,15 @@ class Boggle():
 
         board = []
 
-        for y in range(5):
+        for y in range(5):  # each row
+            # each row gets 5 cells
             row = [choice(string.ascii_uppercase) for i in range(5)]
             board.append(row)
 
         return board
 
     def check_valid_word(self, board, word):
-        """Check if a word is a valid word in the dictionary and/or 
+        """Check if a word is a valid word in the dictionary and 
         the boggle board"""
 
         word_exists = word in self.words  #exists in the dictionary

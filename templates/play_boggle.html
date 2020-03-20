@@ -7,9 +7,23 @@
 
 
 {% block content %}
-<table>
-<!-- Jinga for loop?
-for each row in board append
--->
+<table class="table table-bordered table-striped">
+<!-- Jinga for loop:-->
+<!--for each row in board append <tr>-->
+{% for row in board %}
+    <tr>
+    <!--for cell in row append <td>-->
+        {% for cell in row %}
+            <td>{{ cell }}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}
 </table>
+
+<form action="">
+    <label for="">Player guess</label>
+    <input type="text" name="guess" id="guess">
+    <button>Submit</button>
+</form>
+
 {% endblock%}

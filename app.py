@@ -5,12 +5,29 @@ from flask_debugtoolbar import DebugToolbarExtension
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "password"
 debug = DebugToolbarExtension
+
+
 boggle_game = Boggle()
+on_board_dictionary = boggle_game.words
+
 
 @app.route("/")
 def display_board():
     """ Put the board into html """
-    # boggle_game.make_board()
-    # 
-    return render_template("play_boggle.html")
+    game_board = boggle_game.make_board()
+    # letter = game_board
 
+    session['game_board'] = game_board
+    return render_template(
+        "play_boggle.html",
+        board=game_board
+        )
+
+
+word =  # whatever user sends as their guess
+playable = bool(word in on_board_dictionary)
+
+
+# @app.route()
+# def ():
+#     """ """
