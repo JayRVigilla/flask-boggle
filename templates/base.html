@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{%  block title %}
+        Start of a Mind Boggle-ing Project
+        {% endblock %} </title>
     <link rel="stylesheet" href="../static/stylez.css">
     <link rel='stylesheet' href='https://unpkg.com/bootstrap/dist/css/bootstrap.css'>
 </head>
+
 <body>
 
-{%  block content %} 
+    {%  block content %}
 
-{% endblock %}
+    {% endblock %}
 
     <script src="../static/script.js"></script>
 </body>
+
 </html>
