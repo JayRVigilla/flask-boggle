@@ -15,7 +15,7 @@ class Boggle():
 
         dict_file = open(dict_path)
         words = [w.strip() for w in dict_file]
-        dict_file.close()
+        dict_file.close()        
         return words  # big ole list of all playable words
 
     def make_board(self):
@@ -46,6 +46,7 @@ class Boggle():
         return result
 
     def find_from(self, board, word, y, x, seen):
+        # ** DON'T MESS WITH THIS DEF CODE **
         """Can we find a word on board, starting at x, y?"""
 
         if x > 4 or y > 4:
@@ -130,6 +131,7 @@ class Boggle():
         return False
 
     def find(self, board, word):
+        # We(designers)'ll call this a bunch in Flask
         """Can word be found in board?"""
 
         # Find starting letter --- try every spot on board and,
